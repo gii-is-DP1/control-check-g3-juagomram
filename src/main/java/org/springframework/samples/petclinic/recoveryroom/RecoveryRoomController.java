@@ -29,7 +29,7 @@ public class RecoveryRoomController {
 	
 	@PostMapping("recoveryroom/create")
 	public String formApartado10(@Valid RecoveryRoom recoveryRoom, BindingResult result,ModelMap modelMap) {
-		String view = "/welcome";
+		String view = "welcome";
 		if(result.hasErrors()) {
 			modelMap.put("recoveryRoom", recoveryRoom);
 			modelMap.put("types", recoveryRoomService.getAllRecoveryRoomTypes());
