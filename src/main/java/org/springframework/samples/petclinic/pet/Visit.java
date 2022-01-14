@@ -37,6 +37,10 @@ import org.springframework.samples.petclinic.recoveryroom.RecoveryRoom;
 @Entity
 @Table(name = "visits")
 public class Visit extends BaseEntity {
+	
+	@ManyToOne(optional = true)
+	@JoinColumn(name = "recovery_room_id")
+	RecoveryRoom recoveryRoom;
 
 	/**
 	 * Holds value of property date.
@@ -113,14 +117,16 @@ public class Visit extends BaseEntity {
 	public void setPet(Pet pet) {
 		this.pet = pet;
 	}
-
+	
+	
+	
+	
 	public RecoveryRoom getRecoveryRoom() {
-		// To be implemented
-		return null;
+		return this.recoveryRoom;
 	}
 
 	public void setRecoveryRoom(RecoveryRoom room) {
-		// To be implemented
+		this.recoveryRoom = room;
 	}
 
 }
