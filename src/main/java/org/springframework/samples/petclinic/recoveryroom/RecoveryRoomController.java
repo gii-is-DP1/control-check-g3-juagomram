@@ -27,16 +27,15 @@ public class RecoveryRoomController {
 		return view;
 	}
 	
-	@PostMapping("recoveryroom/create")
+	@PostMapping(path = "recoveryroom/create")
 	public String formApartado10(@Valid RecoveryRoom recoveryRoom, BindingResult result,ModelMap modelMap) {
 		String view = "welcome";
 		if(result.hasErrors()) {
 			modelMap.put("recoveryRoom", recoveryRoom);
 			modelMap.put("types", recoveryRoomService.getAllRecoveryRoomTypes());
-			return "recoveryroom/create";
+			return "recoveryroom/createOrUpdateRecoveryRoomForm";
 		} else {
 			recoveryRoomService.save(recoveryRoom);
-			
 		}
 		return view;
 	}

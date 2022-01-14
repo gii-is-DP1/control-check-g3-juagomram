@@ -32,7 +32,8 @@ public class RecoveryRoomService {
     }
 
     public RecoveryRoom save(RecoveryRoom p) {
-        return null;       
+       RecoveryRoom recoveryRoom = recoveryRoomRepository.save(p);      
+       return recoveryRoom;
     }
 
     
